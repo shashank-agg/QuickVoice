@@ -1,0 +1,9 @@
+<div class="all-container">
+    <div ng-repeat="invoice in allInvoices" class="invoice-container" ng-click="setCurrentScreen('invoice', invoice)">
+        <div class="customer-name">{{getCustomerById(invoice.customerid).name}}</div>
+        <div class="amount">Rs. {{invoice.amount}}</div>
+        <div class="date">{{invoice.date}}</div>
+        <div class="date">{{invoice.description}}</div>
+    </div>
+</div>
+

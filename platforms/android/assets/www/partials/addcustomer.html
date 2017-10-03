@@ -1,0 +1,18 @@
+<div class="add-customer-container">
+    <div class="input-fields-container">
+        <div class="field-container">
+            <div class="field-label">Customer Name:</div>
+            <input class="field-input name" ng-model="addcustomerform.name"/>
+        </div>
+        <div class="field-container">
+            <div class="field-label">Customer Email:</div>
+            <input class="field-input email" ng-model="addcustomerform.email"/>
+        </div>
+        <div class="field-container">
+            <div class="field-label">Customer Phone:</div>
+            <input class="field-input phone" ng-model="addcustomerform.phone" type="tel"/>
+        </div>
+    </div>
+    <button class="create-button" ng-click="addCustomerButtonClicked()">CREATE</button>
+</div>
+

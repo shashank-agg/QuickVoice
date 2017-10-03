@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js">
+
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <link rel="stylesheet" href="app/app.css">
+</head>
+
+<body ng-controller="mainController">
+    <div id="main">
+        <div class="header-tabs-container" ng-if="!isSet('launch')">
+            <div ng-class="{'active-tab': isSet('all') }" ng-click="setCurrentScreen('all')" class="header-tab tab1">ALL</div>
+            <div ng-class="{'active-tab': isSet('create') }" ng-click="setCurrentScreen('create')" class="header-tab tab2">CREATE</div>
+            <div ng-class="{'active-tab': isSet('settings') }" ng-click="setCurrentScreen('settings')" class="header-tab tab3">SETTINGS</div>
+        </div>
+        <div class="launch-title-container" ng-if="isSet('launch')">
+            CONFIGURE
+        </div>
+
+        <div class="content-container" ng-if="isSet('launch')" ng-include="'partials/launch.html'"> </div>
+        <div class="content-container" ng-if="isSet('all')" ng-include="'partials/all.html'"> </div>
+        <div class="content-container" ng-if="isSet('create')" ng-include="'partials/createinvoice.html'"> </div>
+        <div class="content-container" ng-if="isSet('settings')" ng-include="'partials/settings.html'"> </div>
+        <div class="content-container" ng-if="isSet('invoice')" ng-include="'partials/invoice.html'"> </div>
+        <div class="content-container" ng-if="isSet('addcustomer')" ng-include="'partials/addcustomer.html'"> </div>
+
+        <script src="app/app.js"></script>        
+        <script>
+            document.addEventListener("deviceready", function() {
+                angular.bootstrap(document.body, ["cordovaApp"]);
+            }, false);
+        </script>
+</div></body>
+
+</html>

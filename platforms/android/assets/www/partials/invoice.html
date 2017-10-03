@@ -1,0 +1,12 @@
+<div class="selected-invoice-container">
+    <div class="header">INVOICE DETAILS</div>
+    <div class="invoice-details">
+        <div class="customer-name">{{getCustomerById(selectedInvoice.customerid).name}}</div>
+        <div class="description">{{selectedInvoice.description}}</div>
+        <div class="amount">Rs. {{selectedInvoice.amount}}</div>
+        <div class="date">Created on {{selectedInvoice.date}}</div>
+    </div>
+    <button class="send-button" ng-click="sendEmail(getCustomerById(selectedInvoice.customerid).email)">SEND EMAIL</button>
+    <button class="send-button" ng-click="sendSMS(getCustomerById(selectedInvoice.customerid).phone)">SEND SMS</button>
+</div>
+
